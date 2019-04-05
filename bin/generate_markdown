@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+BASE_HEADER_ROW_BEFORE_SCORES="| Question | Topic | Intended Audience | "\
+"Recommended Answer | Actual Answer | Explanation"
+BASE_HEADER_ROW_AFTER_SCORES="Average Score | Maturity Rating | Notes |"
+
+generate_score_row() {
+  
+}
+
+create_header_row() {
+}

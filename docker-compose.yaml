@@ -1,0 +1,9 @@
+---
+version: "3.7"
+services:
+  tests:
+    image: graze/bats
+    volumes:
+      - "$PWD:/app"
+    working_dir: /app
+    command: "./tests"
