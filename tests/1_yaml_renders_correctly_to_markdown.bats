@@ -8,7 +8,7 @@ load_test_data() {
 }
 
 remove_test_data() {
-  rm -r ./clients/example_client
+  rm -r ./clients/example_client.*
 }
 
 setup() {
@@ -22,10 +22,12 @@ teardown() {
 }
 
 @test "YAML correctly renders to markdown." {
-  run scripts/generate_markdown.sh "$example_client"
+  run bin/generate_markdown.sh "$example_client"
+  >&2 echo "Generate markdown test failed with status $status: $output"
   [ "$status" -eq 0 ]
 
   run test -f "$EXPECTED_CLIENT_MARKDOWN_FILE"
+  >&2 echo "Expected markdown file test failed with status $status: $output"
   [ "$status" -eq 0 ]
 
   run cat "$EXPECTED_CLIENT_MARKDOWN_FILE"
