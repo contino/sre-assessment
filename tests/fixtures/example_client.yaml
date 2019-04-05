@@ -1,0 +1,63 @@
+---
+client_info:
+  name: Example Client
+  confluence_page: https://contino.atlassian.net/wiki/spaces/CLIENTS/pages/123456789/Questions
+questions:
+  - question: What color is the sky?
+    topic: Intelligence
+    intended_audience: Everyone
+    recommended_answer: Usually blue
+    actual_answer: Purple
+    explanation: Knowing the color of the sky is usually important.
+    scores:
+      - reference:
+          max_score: 5.0
+      - name: Consultant A
+        score: 3.0 # i think he transcended  humanity?
+      - name: Consultant B
+        score: 1.0 # no, he's just knows where the good stuff is.
+  
+  # Questions without recommended answers are considered "open ended".
+  - question: When do you usually leave work?
+    topic: Culture
+    intended_audience: Engineers
+    actual_answer: Around 4:30pm or so.
+    explanation: >-
+      The time that engineers leave is often strongly correlated with
+      how happy they feel with work.
+    scores:
+      - reference:
+          max_score: 5.0
+      - name: Consultant A
+        score: 5.0
+      - name: Consultant B
+        score: 4.5
+
+  # Questions that don't have a score reference will have a default 'max_score'
+  # of 5.0
+  - question: What motivates you?
+    topic: Culture
+    intended_audience: Management
+    actual_answer: Nothing really.
+    explanation: Having a motivation is nice.
+    scores:
+      - name: Consultant A
+        score: 2.5
+      - name: Consultant B
+        score: 1.0
+
+  # Questions that have notes should have content in the "Notes" section.
+  - question: Where do you see yourself in five years?
+    topic: Career
+    intended_audience: Engineers
+    actual_answer: In the same place as I am now?
+    explanation: Having a career-driven motivation can be nice.
+    scores:
+      - name: Consultant A
+        score: 3.0
+      - name: Consultant B
+        score: 3.5
+    notes: >-
+      - CN: Does this person see themselves in the same place because the system
+        is beating him down?
+      - WJ: Maybe he's just lazy.
